@@ -1,0 +1,50 @@
+name: Data Quality Pipeline
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+  workflow_dispatch:
+
+jobs:
+  data-quality-checks:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install great-expectations dbt-core dbt-snowflake
+    
+    - name: Run Great Expectations data quality checks
+      env:
+        SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+        SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+        SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+        SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+        SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+        SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
+      run: |
+        python scripts/data_quality_checks.py
+    
+    - name: Run dbt data quality tests
+      env:
+        DBT_PROFILES_DIR: ./
+      run: |
+        dbt deps
+        dbt test --target prod
+    
+    - name: Generate data quality report
+      run: |
+        python scripts/generate_quality_report.py
+    
+    - name: Send alerts if data quality issues found
+      if: failure()
+      run: |
+        python scripts/send_alerts.py --type data_quality --severity high

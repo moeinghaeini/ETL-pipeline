@@ -1,0 +1,10 @@
+{
+  "symbol": "BOSCHLTD.BSE",
+  "data_type": "test_data",
+  "timestamp": "20251016_151308",
+  "records_count": 5,
+  "date_range": {
+    "start": "2024-01-01T00:00:00",
+    "end": "2024-01-05T00:00:00"
+  }
+}

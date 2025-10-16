@@ -1,0 +1,66 @@
+version: 2
+
+sources:
+  - name: financial
+    description: "Financial data sources including stock market data"
+    database: dbt_db
+    schema: financial_schema
+    tables:
+      - name: bosch_stock_data
+        description: "Raw Bosch stock data from yfinance"
+        columns:
+          - name: symbol
+            description: "Stock symbol (e.g., BOSCHLTD.BSE)"
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['BOSCHLTD.BSE', 'BOSCHLTD.NSE', 'BOSCHLTD.NS', 'BOSCHLTD.BO']
+          - name: date
+            description: "Trading date"
+            tests:
+              - not_null
+          - name: open_price
+            description: "Opening price for the day"
+            tests:
+              - not_null
+              - dbt_utils.accepted_range:
+                  min_value: 0
+                  max_value: 10000
+          - name: high_price
+            description: "Highest price for the day"
+            tests:
+              - not_null
+              - dbt_utils.accepted_range:
+                  min_value: 0
+                  max_value: 10000
+          - name: low_price
+            description: "Lowest price for the day"
+            tests:
+              - not_null
+              - dbt_utils.accepted_range:
+                  min_value: 0
+                  max_value: 10000
+          - name: close_price
+            description: "Closing price for the day"
+            tests:
+              - not_null
+              - dbt_utils.accepted_range:
+                  min_value: 0
+                  max_value: 10000
+          - name: volume
+            description: "Trading volume for the day"
+            tests:
+              - not_null
+              - dbt_utils.accepted_range:
+                  min_value: 0
+          - name: adjusted_close
+            description: "Adjusted closing price"
+            tests:
+              - not_null
+              - dbt_utils.accepted_range:
+                  min_value: 0
+                  max_value: 10000
+          - name: data_fetched_at
+            description: "Timestamp when data was fetched"
+            tests:
+              - not_null

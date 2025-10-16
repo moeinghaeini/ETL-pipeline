@@ -1,0 +1,33 @@
+# dbt
+target/
+dbt_packages/
+logs/
+profiles.yml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Airflow
+airflow.cfg
+airflow.db
+unittests.cfg
+webserver_config.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

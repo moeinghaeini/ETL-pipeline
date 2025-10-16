@@ -1,0 +1,152 @@
+# Environment Configuration Management
+# This file defines different environment configurations for the ETL pipeline
+
+environments:
+  development:
+    name: "Development"
+    description: "Local development environment"
+    dbt:
+      target: "dev"
+      threads: 2
+      warehouse_size: "x-small"
+      materialization:
+        staging: "view"
+        marts: "table"
+    airflow:
+      executor: "LocalExecutor"
+      max_active_runs: 1
+      catchup: false
+      schedule_interval: "@daily"
+    snowflake:
+      warehouse: "dbt_wh_dev"
+      database: "dbt_db_dev"
+      schema: "dbt_schema_dev"
+      role: "dbt_role_dev"
+    monitoring:
+      enabled: true
+      alert_level: "low"
+      retention_days: 7
+    data_quality:
+      enabled: true
+      sample_size: 1000
+      strict_mode: false
+
+  staging:
+    name: "Staging"
+    description: "Staging environment for testing"
+    dbt:
+      target: "staging"
+      threads: 4
+      warehouse_size: "small"
+      materialization:
+        staging: "table"
+        marts: "table"
+    airflow:
+      executor: "LocalExecutor"
+      max_active_runs: 2
+      catchup: false
+      schedule_interval: "@daily"
+    snowflake:
+      warehouse: "dbt_wh_staging"
+      database: "dbt_db_staging"
+      schema: "dbt_schema_staging"
+      role: "dbt_role_staging"
+    monitoring:
+      enabled: true
+      alert_level: "medium"
+      retention_days: 30
+    data_quality:
+      enabled: true
+      sample_size: 10000
+      strict_mode: true
+
+  production:
+    name: "Production"
+    description: "Production environment"
+    dbt:
+      target: "prod"
+      threads: 8
+      warehouse_size: "medium"
+      materialization:
+        staging: "table"
+        marts: "table"
+    airflow:
+      executor: "LocalExecutor"
+      max_active_runs: 1
+      catchup: true
+      schedule_interval: "@daily"
+    snowflake:
+      warehouse: "dbt_wh_prod"
+      database: "dbt_db_prod"
+      schema: "dbt_schema_prod"
+      role: "dbt_role_prod"
+    monitoring:
+      enabled: true
+      alert_level: "high"
+      retention_days: 90
+    data_quality:
+      enabled: true
+      sample_size: 100000
+      strict_mode: true
+
+  testing:
+    name: "Testing"
+    description: "Testing environment for CI/CD"
+    dbt:
+      target: "test"
+      threads: 2
+      warehouse_size: "x-small"
+      materialization:
+        staging: "view"
+        marts: "view"
+    airflow:
+      executor: "LocalExecutor"
+      max_active_runs: 1
+      catchup: false
+      schedule_interval: "@daily"
+    snowflake:
+      warehouse: "dbt_wh_test"
+      database: "dbt_db_test"
+      schema: "dbt_schema_test"
+      role: "dbt_role_test"
+    monitoring:
+      enabled: false
+      alert_level: "low"
+      retention_days: 1
+    data_quality:
+      enabled: true
+      sample_size: 100
+      strict_mode: false
+
+# Global configuration
+global:
+  project_name: "snowflake_workshop"
+  version: "1.0.0"
+  default_environment: "development"
+  
+  # Common settings across all environments
+  common:
+    dbt:
+      config_version: 2
+      model_paths: ["models"]
+      test_paths: ["tests"]
+      macro_paths: ["macros"]
+      seed_paths: ["data"]
+      snapshot_paths: ["snapshots"]
+      target_path: "target"
+      clean_targets: ["target", "dbt_packages"]
+    
+    logging:
+      level: "INFO"
+      format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+      file_retention_days: 30
+    
+    security:
+      encrypt_connections: true
+      rotate_secrets_days: 90
+      audit_logging: true
+    
+    performance:
+      query_timeout_seconds: 300
+      max_retries: 3
+      retry_delay_seconds: 60

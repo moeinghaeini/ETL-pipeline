@@ -1,0 +1,174 @@
+{
+  "timestamp": "2025-10-16T15:13:10.134618",
+  "symbols_analyzed": [
+    "BOSCHLTD.NS",
+    "BOSCHLTD.BO"
+  ],
+  "analysis_results": {
+    "BOSCHLTD.NS": {
+      "description": "Bosch Limited (NSE Alt)",
+      "analysis_report": {
+        "timestamp": "2025-10-16T15:13:12.161630",
+        "symbol": "BOSCHLTD.NS",
+        "company_info": {
+          "symbol": "BOSCHLTD.NS",
+          "name": "Bosch Limited",
+          "sector": "Consumer Cyclical",
+          "industry": "Auto Parts",
+          "market_cap": 1135800090624,
+          "employees": 38655,
+          "website": "https://www.bosch.in",
+          "description": "Bosch Limited engages in the manufacture and trading of automotive products in India and internationally. The company offers products, such as spark and glow plugs; nozzle holder, components, and fuel rail assembly; LAG, SAG, rotary drill, hammer, and marble cutter; impact drilling machine; fuel injection pump and components; blower; and machines and components. It also provides diesel and gasoline fuel injection systems; automotive aftermarket products; industrial equipment; electrical power tools; security systems; and industrial and consumer energy products and solutions. In addition, the company offers internal combustion engines, thermal management systems, filters, batteries, lubricants, wiper blades, and diagnostic equipment and software; engages in hydrogen business; and operates authorized workshops and service centers. Further, it supplies power tools and related accessories, garden tools, and measuring technology. Additionally, the company provides video surveillance, intrusion detection, fire detection and voice evacuation systems, as well as access control and management systems; intercom systems, and professional audio and conference systems for communication of voice, sound, and music. The company was incorporated in 1951 and is headquartered in Bengaluru, India. Bosch Limited operates as a subsidiary of Robert Bosch Internationale Beteiligungen AG.",
+          "country": "India",
+          "currency": "INR",
+          "exchange": "NSI",
+          "fetched_at": "2025-10-16T15:13:12.159388"
+        },
+        "performance_metrics": {
+          "current_price": 38510.0,
+          "day_change": 130.0,
+          "day_change_percent": 0.33871808233454925,
+          "week_change_percent": -0.29773462783171517,
+          "month_change_percent": 1.4494677498442277,
+          "volume": "16713",
+          "avg_volume": 33302.03125,
+          "volatility": 0.0072622743028455845,
+          "rsi": 49.77029096477794
+        },
+        "technical_summary": {
+          "trend": "bearish",
+          "rsi_signal": "neutral",
+          "bollinger_position": "middle",
+          "macd_signal": "bullish"
+        },
+        "risk_assessment": {
+          "level": "low",
+          "volatility": 0.0072622743028455845,
+          "rsi": 49.77029096477794
+        },
+        "anomalies": {
+          "timestamp": "2025-10-16T15:13:12.160209",
+          "symbol": "BOSCHLTD.NS",
+          "alerts": [],
+          "metrics": {
+            "current_price": 38510.0,
+            "price_change_percent": 0.33871808233454925,
+            "volume": "16713",
+            "rsi": 49.77029096477794,
+            "volatility": 0.0072622743028455845,
+            "ma_20": 38697.75,
+            "ma_50": 39367.2
+          }
+        },
+        "recommendations": [
+          "Consider selling or shorting - bearish trend detected"
+        ]
+      },
+      "chart_path": "data/financial/BOSCHLTD.NS_chart.html",
+      "data_path": "data/financial/BOSCHLTD.NS_stock_data_20251016_151312.csv",
+      "anomalies": {
+        "timestamp": "2025-10-16T15:13:12.160209",
+        "symbol": "BOSCHLTD.NS",
+        "alerts": [],
+        "metrics": {
+          "current_price": 38510.0,
+          "price_change_percent": 0.33871808233454925,
+          "volume": "16713",
+          "rsi": 49.77029096477794,
+          "volatility": 0.0072622743028455845,
+          "ma_20": 38697.75,
+          "ma_50": 39367.2
+        }
+      }
+    },
+    "BOSCHLTD.BO": {
+      "description": "Bosch Limited (BSE Alt)",
+      "analysis_report": {
+        "timestamp": "2025-10-16T15:13:12.980190",
+        "symbol": "BOSCHLTD.BO",
+        "company_info": {
+          "symbol": "BOSCHLTD.BO",
+          "name": "Bosch Limited",
+          "sector": "Consumer Cyclical",
+          "industry": "Auto Parts",
+          "market_cap": 1136258711552,
+          "employees": 38655,
+          "website": "https://www.bosch.in",
+          "description": "Bosch Limited engages in the manufacture and trading of automotive products in India and internationally. The company offers products, such as spark and glow plugs; nozzle holder, components, and fuel rail assembly; LAG, SAG, rotary drill, hammer, and marble cutter; impact drilling machine; fuel injection pump and components; blower; and machines and components. It also provides diesel and gasoline fuel injection systems; automotive aftermarket products; industrial equipment; electrical power tools; security systems; and industrial and consumer energy products and solutions. In addition, the company offers internal combustion engines, thermal management systems, filters, batteries, lubricants, wiper blades, and diagnostic equipment and software; engages in hydrogen business; and operates authorized workshops and service centers. Further, it supplies power tools and related accessories, garden tools, and measuring technology. Additionally, the company provides video surveillance, intrusion detection, fire detection and voice evacuation systems, as well as access control and management systems; intercom systems, and professional audio and conference systems for communication of voice, sound, and music. The company was incorporated in 1951 and is headquartered in Bengaluru, India. Bosch Limited operates as a subsidiary of Robert Bosch Internationale Beteiligungen AG.",
+          "country": "India",
+          "currency": "INR",
+          "exchange": "BSE",
+          "fetched_at": "2025-10-16T15:13:12.976247"
+        },
+        "performance_metrics": {
+          "current_price": 38525.55078125,
+          "day_change": 163.15234375,
+          "day_change_percent": 0.4252923445748777,
+          "week_change_percent": -0.22556768254573317,
+          "month_change_percent": 1.517438796432777,
+          "volume": "180",
+          "avg_volume": 936.828125,
+          "volatility": 0.007196304166208232,
+          "rsi": 50.427139086377274
+        },
+        "technical_summary": {
+          "trend": "bearish",
+          "rsi_signal": "neutral",
+          "bollinger_position": "middle",
+          "macd_signal": "bullish"
+        },
+        "risk_assessment": {
+          "level": "low",
+          "volatility": 0.007196304166208232,
+          "rsi": 50.427139086377274
+        },
+        "anomalies": {
+          "timestamp": "2025-10-16T15:13:12.977486",
+          "symbol": "BOSCHLTD.BO",
+          "alerts": [],
+          "metrics": {
+            "current_price": 38525.55078125,
+            "price_change_percent": 0.4252923445748777,
+            "volume": "180",
+            "rsi": 50.427139086377274,
+            "volatility": 0.007196304166208232,
+            "ma_20": 38693.602734375,
+            "ma_50": 39364.82015625
+          }
+        },
+        "recommendations": [
+          "Consider selling or shorting - bearish trend detected"
+        ]
+      },
+      "chart_path": "data/financial/BOSCHLTD.BO_chart.html",
+      "data_path": "data/financial/BOSCHLTD.BO_stock_data_20251016_151313.csv",
+      "anomalies": {
+        "timestamp": "2025-10-16T15:13:12.977486",
+        "symbol": "BOSCHLTD.BO",
+        "alerts": [],
+        "metrics": {
+          "current_price": 38525.55078125,
+          "price_change_percent": 0.4252923445748777,
+          "volume": "180",
+          "rsi": 50.427139086377274,
+          "volatility": 0.007196304166208232,
+          "ma_20": 38693.602734375,
+          "ma_50": 39364.82015625
+        }
+      }
+    }
+  },
+  "overall_summary": {
+    "total_symbols": 2,
+    "total_alerts": 0,
+    "symbols_with_alerts": 0,
+    "average_volatility": 0.007229289234526908,
+    "average_rsi": 50.098715025577604,
+    "price_change_range": {
+      "min": 0.33871808233454925,
+      "max": 0.4252923445748777,
+      "avg": 0.3820052134547135
+    },
+    "risk_assessment": "low"
+  }
+}
